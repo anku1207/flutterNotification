@@ -20,6 +20,35 @@ Future<void> _messageHandler(RemoteMessage message) async {
 
 //https://www.filledstacks.com/post/push-notifications-in-flutter-using-firebase/
 
+/*
+var request = require("request");
+
+var options = { method: 'POST',
+  url: 'https://fcm.googleapis.com/fcm/send',
+  headers:
+  { 'cache-control': 'no-cache',
+    Connection: 'keep-alive',
+    'Content-Length': '113',
+    'Accept-Encoding': 'gzip, deflate',
+    Host: 'fcm.googleapis.com',
+    'Postman-Token': '3423055f-259b-47c8-86f7-84d2834b52ab,089a3497-6f4d-4a67-b568-9366d3c8da0d',
+    'Cache-Control': 'no-cache',
+    'User-Agent': 'PostmanRuntime/7.16.3',
+    'Content-Type': 'application/json',
+    Authorization: 'key=AAAAfh0N9gc:APA91bGhTyCsK3aWdbKIxSSNnGydJihPDUU5dG1K9dbOLzaW3kNCnD8hmttCs1nHUiQsQmDo0qMCkXIdbkbJWBbJJp6cv_Vg28_VWWmPTqwPTkRk0MphjNkRs3WtvZm12OJW3bnaap-b' },
+  body:
+  { to: '/topics/messaging',
+    priority: 'high',
+    notification: { title: 'Emergency Alert!', body: 'body' } },
+  json: true };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+*/
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
