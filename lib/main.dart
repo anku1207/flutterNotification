@@ -15,7 +15,21 @@ final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
 
 Future<void> _messageHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
-  print('background message ${message.notification!.body}');
+ // print('background message ${message.notification!.body}');
+  flutterLocalNotificationsPlugin.show(
+      message.data.hashCode,
+      message.data["title"]+"jjjjjjjjjjjjjjjjjjjjjjj",
+      message.data["body"],
+      NotificationDetails(
+        android: AndroidNotificationDetails(
+          channel.id,
+          channel.name,
+          channel.description,
+          color: Colors.blue,
+          playSound: true,
+          icon: '@mipmap/ic_launcher',
+        ),
+      ));
 }
 
 //https://www.filledstacks.com/post/push-notifications-in-flutter-using-firebase/
